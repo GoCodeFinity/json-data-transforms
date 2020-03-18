@@ -1,27 +1,26 @@
-# SWIC JS Students Project Boilerplate Starter Kit
+# Data Conversion Utilities
 
-## Overview
+In the process of doing some conversion of JSON data using, it seemed worthwile to build a basic 'utils library' of sorts.
 
-This template repository contains several opinionated, 'starter' files and settings to help SWIC JS students focus more time and energy on learning how to code and/or craft 'business logic' for projects and less time on configurations.
+As usual, do `npm i` to get started after cloning. There are some VS Code extensions and settings included.ß
 
-In addition to a '.gitignore' and some VS Code specific extensions and settings, it includes the 'recommended' settings for:
+No JSON data is actually included, but you can keep it there in JSON and read the info in. For example, if you have some 'json/catalog.json':
 
-1. [ESLint](eslint.org)
-2. [Stylelint](stylelint.io)
-3. [Prettier](prettier.io)
+```js
+// Use 'promisified' version of 'fs' from 'newer' Node.
+import { promises as fs } from "fs";
 
-## Get Started
+// Using 'async' IIFE
+(async function() {
+  const catalog = JSON.parse(await fs.readFile("./json/catalog.json"));
 
-**First and foremost,** make sure that your local machine is set up with all of the 'dev environment tooling' as per [this guide...](https://www.notion.so/codefinity/Setting-up-a-Local-Dev-Environment-97de62a546f943fbbc7a246b4785a343)
+  /**
+   * TODO: Import and invoke some fxns. from './lib.js.'
+   * 'writeFile' JSON back.
+   */
+})();
+```
 
-Well, after establishing your directory structure on your local machine, (e.g. '~/Code/SavvyCoders'), kindly [follow these girections](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-from-a-template) - essentially, there should be a button 👆🏾that says **Use this template.**
+---
 
-Once this repo has been created on your GitHub, you can click on the button to 'clone' it as usual. Once it's `clone`d to your local machine, kindly `cd` into the directory and **be sure to do:** `npm i` to get all of the goodies. If you see any _errors_ (warnings are 🙆🏾‍♂️) on Windows, you may have to do `npm install`.
-
-Now, enter `code .` to open this project in VS Code, and look for a prompt to 'install some extensions' once inside VS Code (in the bottom right of your screen). You should install these. 👍🏾
-
-Update this README and make any other initial changes or 🌱 files, etc. To help you do that, here's a [Markdown Guide](https://www.notion.so/codefinity/MarkDown-Guide-3c7aecdc1327437e9785cb9c1d277f42)
- 
-Go ahead and do your usual `git` steps, etc. etc. etc.
-
-**Note:** This is a template repository, no need to 'fork it. Just click 'Use This Template.'
+Alternatively, just copy/paste whatever is needed out of './lib.js.'
