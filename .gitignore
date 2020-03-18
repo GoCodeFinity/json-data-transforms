@@ -3,3 +3,6 @@
 dist
 node_modules
 *.sw*
+
+# Don't include any actual JSON data.
+json/*.json
